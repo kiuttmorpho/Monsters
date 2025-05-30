@@ -13,10 +13,11 @@ import model.importers.JSONImporter;
 import model.importers.XMLImporter;
 import model.importers.YAMLImporter;
 
+
 public class MonsterController {
-    private final MonsterStorage storage = new MonsterStorage();
-    private final FileImporter fileImporter = createImporterChain();
-    private final Map<File, List<UUID>> fileMonsterMap = new HashMap<>();
+    private MonsterStorage storage = new MonsterStorage();
+    private FileImporter fileImporter = createImporterChain();
+    private Map<File, List<UUID>> fileMonsterMap = new HashMap<>();
 
     public void importFiles(JFrame parent, Consumer<List<Monster>> onSuccess) {
         JFileChooser fileChooser = createFileChooser();

@@ -59,7 +59,7 @@ public class MonsterView extends JFrame {
         rightPanel.add(detailsScroll, BorderLayout.CENTER);
 
         JPanel descriptionPanel = new JPanel(new BorderLayout(5,5));
-        descriptionLabel = new JLabel("Описание (редактируемое поле):");
+        descriptionLabel = new JLabel("Отредактируйте поле:");
         descriptionArea = new JTextArea(4, 40);
         descriptionArea.setLineWrap(true);
         descriptionArea.setWrapStyleWord(true);
@@ -110,7 +110,7 @@ public class MonsterView extends JFrame {
             List<Monster> monsters = controller.getMonstersBySource(selectedMonster.getSource());
             controller.exportMonsters(this, monsters); 
         } else {
-            JOptionPane.showMessageDialog(this, "Пожалуйста, выберите файл для экспорта.", "Ошибка", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Пожалуйста, выберите файл для экспорта", "Ошибка", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -213,7 +213,7 @@ public class MonsterView extends JFrame {
         if (node != null && node.getUserObject() instanceof Monster) {
             Monster monster = (Monster) node.getUserObject();
             monster.setDescription(descriptionArea.getText());
-            JOptionPane.showMessageDialog(this, "Изменения сохранены.", "Сохранение", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Изменения сохранены", "Сохранение", JOptionPane.INFORMATION_MESSAGE);
             showMonsterDetails(monster);
         }
     }

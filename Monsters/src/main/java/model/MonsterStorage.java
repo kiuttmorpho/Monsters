@@ -6,9 +6,9 @@ import java.util.*;
 
 
 public class MonsterStorage {
-    private final List<Monster> monsters = new ArrayList<>();
-    private final Map<String, List<Monster>> monstersBySource = new HashMap<>();
-    private final Map<File, List<Monster>> monstersByFile = new HashMap<>();
+    private List<Monster> monsters = new ArrayList<>();
+    private Map<String, List<Monster>> monstersBySource = new HashMap<>();
+    private Map<File, List<Monster>> monstersByFile = new HashMap<>();
 
     public void addMonster(Monster monster, File sourceFile) {
         if (monster != null && sourceFile != null) {
